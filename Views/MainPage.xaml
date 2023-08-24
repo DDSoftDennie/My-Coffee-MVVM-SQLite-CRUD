@@ -33,22 +33,10 @@
                     FontAttributes="Bold"
                     FontSize="Title"
                     HorizontalOptions="Center"
-                    Text="This is main page use menu to find out about our Coffee "
+                    TextColor="White"
+                    Text="Welcome to Coffee Dreams"
                     VerticalOptions="Center" />
             </Border>
-
-            <Label
-                FontAttributes="Italic"
-                FontSize="Subtitle"
-                HorizontalOptions="Center"
-                Text="This page is just place holder "
-                VerticalOptions="Center" />
-            <Label
-                FontAutoScalingEnabled="True"
-                FontSize="Body"
-                HorizontalOptions="Center"
-                Text="This test app design for mainly tablet and windows PC however it still work on phone screen  "
-                VerticalOptions="Center" />
 
             <!--  Replace with Card
             <Grid

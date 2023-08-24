@@ -27,6 +27,7 @@ namespace MyCoffeeMVVMSQLite.Services
             Console.WriteLine("Table Created");
         }
 
+
         public async Task AddCoffee(string name, string roaster)
         {
             await Init();
@@ -68,7 +69,11 @@ namespace MyCoffeeMVVMSQLite.Services
             return coffee;
         }
 
-    }
+		public Task<List<CoffeeModel>> GetCoffeeList()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }
 
 

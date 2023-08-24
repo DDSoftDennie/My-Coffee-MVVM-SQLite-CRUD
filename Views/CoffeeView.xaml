@@ -4,69 +4,88 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:MyCoffeeMVVMSQLite.ViewModels"
-    Title="My Coffee View Page "
+    Title="My Coffees"
     x:DataType="vm:CoffeeViewModel">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <VerticalStackLayout
+    Padding="4"
+    Spacing="10"
+    VerticalOptions="StartAndExpand">
+            <Label
+        FontSize="Title"
+        HorizontalOptions="Center"
+        Text="Here are my Coffees:"
+        VerticalOptions="Center" />
 
-    <VerticalStackLayout
-        Padding="4"
-        Spacing="10"
-        VerticalOptions="StartAndExpand">
-        <Label
-            FontSize="Title"
-            HorizontalOptions="Center"
-            Text="Welcome to My Coffee Page"
-            VerticalOptions="Center" />
+            <Border
+        Padding="16,8"
+        Background="#2B0B00"
+        HorizontalOptions="FillAndExpand"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        StrokeThickness="2"
+        VerticalOptions="CenterAndExpand">
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Offset="0.1" Color="Orange" />
+                        <GradientStop Offset="1.0" Color="Brown" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
 
-        <Border
-            Padding="16,8"
-            Background="#2B0B00"
+                <Grid
+            Grid.Row="3"
+            Grid.Column="2"
+            Padding="2"
+            ColumnDefinitions="110,200*"
+            ColumnSpacing="4"
             HorizontalOptions="FillAndExpand"
-            StrokeShape="RoundRectangle 40,0,0,40"
-            StrokeThickness="2"
-            VerticalOptions="CenterAndExpand">
-            <Border.Stroke>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Offset="0.1" Color="Orange" />
-                    <GradientStop Offset="1.0" Color="Brown" />
-                </LinearGradientBrush>
-            </Border.Stroke>
+            RowDefinitions="50*,50*,50*"
+            RowSpacing="10"
+            VerticalOptions="StartAndExpand">
 
-            <Grid
-                Grid.Row="3"
-                Grid.Column="2"
-                Padding="2"
-                ColumnDefinitions="110,200*"
-                ColumnSpacing="4"
+                    <Image
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                Grid.Column="0"
+                HeightRequest="100"
+                Source="b1.png"
+                VerticalOptions="CenterAndExpand" />
+
+                    <Label
+                Grid.Row="0"
+                Grid.Column="1"
                 HorizontalOptions="FillAndExpand"
-                RowDefinitions="50*,50*,50*"
-                RowSpacing="10"
-                VerticalOptions="StartAndExpand">
+                Text="Coffee ID" />
+                    <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                Text="Coffee Roaster" />
+                    <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                Text="Coffee Name" />
 
-                <Image
-                    Grid.Row="0"
-                    Grid.RowSpan="3"
-                    Grid.Column="0"
-                    HeightRequest="100"
-                    Source="b1.png"
-                    VerticalOptions="CenterAndExpand" />
+                </Grid>
+            </Border>
 
-                <Label
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    HorizontalOptions="FillAndExpand"
-                    Text="Coffee ID" />
-                <Label
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="FillAndExpand"
-                    Text="Coffee Roaster" />
-                <Label
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    HorizontalOptions="FillAndExpand"
-                    Text="Coffee Name" />
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1">
+            <Label>Add Coffee</Label>
+            <Entry Placeholder="Name"></Entry>
+            <Entry Placeholder="Roaster"></Entry>
+            <Entry Placeholder="Image URI"></Entry>
+            <Button Text="Add Coffee"></Button>
+            <Button Text="Load Coffees"></Button>
+        </VerticalStackLayout>
+    </Grid>
 
-            </Grid>
-        </Border>
-    </VerticalStackLayout>
+
 </ContentPage>

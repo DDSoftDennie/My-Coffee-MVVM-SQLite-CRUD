@@ -4,7 +4,7 @@ namespace MyCoffeeMVVMSQLite.Services
 {
     public interface ICoffeeService
     {
-        // Task<List<Coffee>> GetCoffeeList();
+        Task<List<CoffeeModel>> GetCoffeeList();
         Task AddCoffee(string name, string roaster);
         Task<IEnumerable<CoffeeModel>> GetCoffee();
         Task<CoffeeModel> GetCoffee(int id);
