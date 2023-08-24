@@ -19,16 +19,15 @@ public static class MauiProgram
 
 
         // Service Registration 
-        builder.Services.AddSingleton<ICoffeeService, CoffeeService>();
+        builder.Services.AddSingleton<ICoffeeService, SQLiteCoffeeService>();
 
         // View Registration
-        builder.Services.AddSingleton<MainPage>(); // This is autogenrate page  that why naming does not follow screma 
+        builder.Services.AddSingleton<MainPage>(); 
         builder.Services.AddSingleton<CoffeeView>();
 
         // View Model Registration
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddSingleton<CoffeeViewModel>();
-
 
 
         return builder.Build();

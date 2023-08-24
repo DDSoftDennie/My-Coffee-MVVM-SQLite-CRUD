@@ -1,13 +1,13 @@
 ﻿using MyCoffeeMVVMSQLite.Services;
 using MyCoffeeMVVMSQLite.Models; // use this to get " Coffee " to work and Coffee is Model name 
 
-using SQLite; // https://github.com/praeclarum/sqlite-net?WT.mc_id=friends-0000-jamont
+using SQLite; 
 
 
-[assembly: Microsoft.Maui.Controls.Dependency(typeof(CoffeeService))] // not sure what this does yet ..
+[assembly: Microsoft.Maui.Controls.Dependency(typeof(SQLiteCoffeeService))] 
 namespace MyCoffeeMVVMSQLite.Services
 {
-    public class CoffeeService : ICoffeeService // inherited from ICoffeeService Files ..
+    public class SQLiteCoffeeService : ICoffeeService
     {
         SQLiteAsyncConnection db;
 
@@ -69,7 +69,7 @@ namespace MyCoffeeMVVMSQLite.Services
             return coffee;
         }
 
-		public Task<List<CoffeeModel>> GetCoffeeList()
+		public List<CoffeeModel> GetAllCoffees()
 		{
 			throw new NotImplementedException();
 		}

@@ -38,7 +38,8 @@
                     </LinearGradientBrush>
                 </Border.Stroke>
 
-                <Grid
+                <ListView />
+                <!--<Grid
             Grid.Row="3"
             Grid.Column="2"
             Padding="2"
@@ -73,17 +74,19 @@
                 HorizontalOptions="FillAndExpand"
                 Text="Coffee Name" />
 
-                </Grid>
+                </Grid>-->
             </Border>
 
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="1">
+            <Label Text="{Binding VMTest}"/>
             <Label>Add Coffee</Label>
             <Entry Placeholder="Name"></Entry>
             <Entry Placeholder="Roaster"></Entry>
             <Entry Placeholder="Image URI"></Entry>
-            <Button Text="Add Coffee"></Button>
-            <Button Text="Load Coffees"></Button>
+            <Button Command="{Binding AddCoffee}" Text="Add Coffee"></Button>
+            <Button Command="{Binding LoadCoffees}" Text="Load Coffees"></Button>
+            <Button Command="{Binding TestCommand}" Text="Test Commands"></Button>
         </VerticalStackLayout>
     </Grid>
 

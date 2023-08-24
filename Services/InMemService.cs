@@ -9,9 +9,22 @@ namespace MyCoffeeMVVMSQLite.Services
 {
 	internal class InMemService : ICoffeeService
 	{
+		private readonly List<CoffeeModel> _coffees = new List<CoffeeModel>
+		{
+			new CoffeeModel() { Id = 1, Name = "Cappuccino", Roaster = "Starbucks" },
+			new CoffeeModel() { Id = 2, Name = "Cafe au Lait", Roaster = "Costa" },
+			new CoffeeModel() { Id = 3, Name = "Americano", Roaster = "Nero" },
+			new CoffeeModel() { Id = 4, Name = "Espresso", Roaster = "Greggs" },
+			new CoffeeModel() { Id = 5, Name = "Macchiato", Roaster = "Starbucks" }
+		};
+
+		
+
 		public Task AddCoffee(string name, string roaster)
 		{
-			throw new NotImplementedException();
+			CoffeeModel coffee = new CoffeeModel { Name = name, Roaster = roaster };
+			_coffees.Add(coffee);
+			return Task.CompletedTask;
 		}
 
 		public Task<IEnumerable<CoffeeModel>> GetCoffee()
@@ -24,9 +37,9 @@ namespace MyCoffeeMVVMSQLite.Services
 			throw new NotImplementedException();
 		}
 
-		public Task<List<CoffeeModel>> GetCoffeeList()
+		public List<CoffeeModel> GetAllCoffees()
 		{
-			throw new NotImplementedException();
+			return _coffees.ToList();
 		}
 
 		public Task RemoveCoffee(int id)
